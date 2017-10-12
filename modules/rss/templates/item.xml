@@ -1,0 +1,10 @@
+	<item>
+	  <title>{ITEMTITLE}</title>
+
+	  <link>{ITEMLINK}</link>
+
+	  <description>{ITEMDESCRIPTION}</description>
+
+	  <pubDate>{ITEMRELEASEDATE}</pubDate>
+
+	</item>

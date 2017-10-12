@@ -1,0 +1,256 @@
+#############
+# uncomment to up your php script memory limit
+# this may be disabled on some servers.
+# php_value memory_limit 24M
+#############
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks
+    RewriteEngine On
+    
+    #############
+    #
+    # SEO Support
+    #
+    #############
+    
+    #############
+    # SEO Test url
+    #############
+    
+    RewriteRule ^test.(htm|html)/?$   /test/seo.php [L]
+    
+    #############
+    # Download Game Views
+    #############
+    #default short
+    RewriteRule ^download.(htm|html)/?$   /download-games.php [L]
+    #default
+    RewriteRule ^download-games.(htm|html)/?$   /download-games.php [L]
+    # glrelease
+    RewriteRule ^new-download-games.(htm|html)/?$   /download-games.php?games=new-download [L]
+    # glrank
+    RewriteRule ^top-download-games.(htm|html)/?$      /download-games.php?games=top-download [L]
+    
+    #############
+    # Download Game Views with Game type passed
+    #############
+    # glrelease with game type
+    RewriteRule ^new-(.*)-download-games.(htm|html)/?$   /download-games.php?games=new-download&platform=$1 [L]
+    # glrank with game type
+    RewriteRule ^top-(.*)-download-games.(htm|html)/?$      /download-games.php?games=top-download&platform=$1 [L]
+    
+    #############
+    # ALT Download Genre Game Rules
+    #############
+    # genre with game type
+    RewriteRule ^download-(.*)-(.*)-games.(htm|html)/?$          /download-games.php?games=$2&platform=$1 [L]
+    # genre with system default game type
+    RewriteRule ^download-(.*)-games.(htm|html)/?$          /download-games.php?games=$1 [L]
+    
+    #############
+    # Online Game Views
+    #############
+    #default short
+    RewriteRule ^online.(htm|html)$ /online-games.php
+    #default
+    RewriteRule ^online-games.(htm|html)/?$   /online-games.php [L]
+    
+    
+    # glreleaseog
+    RewriteRule ^new-online-games.(htm|html)/?$   /online-games.php?games=new-online [L]
+    # glrankog
+    RewriteRule ^top-online-games.(htm|html)/?$      /online-games.php?games=top-online [L]
+    
+    #############
+    # Online Genre Game Views
+    #############
+    
+    
+    RewriteRule ^(.*)-online-games.(htm|html)/?$   /online-games.php?games=$1 [L]
+    RewriteRule ^online-(.*)-games.(htm|html)/?$   /online-games.php?games=$1 [L]
+    
+    #############
+    # Download Genre Game Fallback Views
+    #############
+    
+    RewriteRule ^(.*)-games.(htm|html)/?$          /download-games.php?games=$1 [L]
+    
+    #############
+    # browse with locale and gametype passed
+    # http://sgs.lan/browse-all-rank-desc-0-10-en-pc.html
+    # http://sgs.lan/browse.php?genre=all&sort=date&order=desc&from=0&view=50&locale=en&platform=pc
+    #############
+    
+    RewriteRule browse-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)-(.*)\.(htm|html)$ /browse.php?genre=$1&sort=$2&order=$3&from=$4&view=$5&locale=$6&platform=$7
+    
+    #############
+    # browse with view passed no locale or gametype
+    # http://sgs.lan/browse-all-rank-desc-0-10.html
+    # http://sgs.lan/browse.php?genre=all&sort=date&order=desc&from=0&view=50
+    #############
+    
+    RewriteRule browse-(.*)-(.*)-(.*)-(.*)-(.*)\.(htm|html)$ /browse.php?genre=$1&sort=$2&order=$3&from=$4&view=$5
+    
+    #############
+    # browse basic params
+    # http://sgs.lan/browse-all-rank-desc-0.html
+    # http://sgs.lan/browse.php?genre=all&sort=rank&order=desc&from=0
+    #############
+    
+    RewriteRule browse-(.*)-(.*)-(.*)-(.*)\.(htm|html)$ /browse.php?genre=$1&sort=$2&order=$3&from=$4
+    
+    #############
+    # browse no params
+    # http://sgs.lan/browse.html
+    # http://sgs.lan/browse.php
+    #############
+    
+    RewriteRule browse.(htm|html)$ /browse.php
+    #############
+    # search fom 0 or more and view
+    # http://sgs.lan/search-term-0.html
+    #############
+    
+    RewriteRule search-(.*)-(.*)-(.*)-(.*)\.(htm|html)$ /search.php?search=$1&platform=$2&from=$3&view=$4
+    
+    #############
+    # search fom 0 or more and view
+    # http://sgs.lan/search-term-0.html
+    #############
+    
+    RewriteRule search-(.*)-(.*)-(.*)\.(htm|html)$ /search.php?search=$1&from=$2&view=$3
+    
+    #############
+    # search from 0 or more
+    # http://sgs.lan/search-term-0.html
+    #############
+    
+    RewriteRule search-(.*)-(.*)\.(htm|html)$ /search.php?search=$1&from=$2
+    
+    #############
+    # search from 0
+    # http://sgs.lan/search-term.html
+    #############
+    
+    RewriteRule search-(.*)\.(htm|html)$ /search.php?search=$1
+    
+    
+    #############
+    # search default
+    # http://sgs.lan/search.html
+    #############
+    
+    RewriteRule search.(htm|html)$ /search.php
+    
+    #############
+    # search from 0
+    # http://sgs.lan/search-term.html
+    #############
+    
+    RewriteRule search(.*)\.(htm|html)$ /search.php?search=$1
+    
+    #############
+    # gameinfo with locale and altversion request
+    # http://sgs.lan/game_id_game-foldername_locale_platform.html
+    #############
+    
+    RewriteRule ^game_(.*)_(.*)_(.*)_(.*)\.(htm|html)$ /gameinfo.php?id=$1&foldername=$2&locale=$3&platform=$4
+    
+    #############
+    # gameinfo default request
+    # http://sgs.lan/game_id_game-foldername.html
+    #############
+    
+    RewriteRule ^game_(.*)_(.*)\.(htm|html)$ /gameinfo.php?id=$1
+    
+    #############
+    # Download url
+    #############
+    
+    RewriteRule ^download_(.*)_(.*)\.(htm|html)$ /request.php?type=download&gameid=$1&platform=$2
+    
+    #############
+    # Buy url
+    #############
+    
+    RewriteRule ^buy_(.*)_(.*)\.(htm|html)$ /request.php?type=buy&gameid=$1&platform=$2
+    
+    #############
+    # Online Games
+    # http://sgs.lan/online-games.html
+    #############
+    
+    RewriteRule ^online-games.(htm|html)$ /online-games.php
+    
+    #############
+    #Online Play
+    # http://sgs.lan/play_id_foldername.html
+    #############
+    
+    RewriteRule ^play_(.*)_(.*)\.(htm|html)$ /play.php?id=$1
+    
+    #############
+    # login page
+    #############
+    
+    RewriteRule ^login.(htm|html)/?$ /login.php [NC]
+    
+    #############
+    # search page
+    #############
+    
+    RewriteRule ^search_(.*).(htm|html)/?$ /search.php?search=$1 [NC]
+    
+    #############
+    # sitemap page
+    #############
+    
+    RewriteRule ^sitemap.(htm|html)/?$ /sitemap.php [NC]
+    
+    #############
+    # tags / tagcloud
+    #############
+    
+    RewriteRule ^tags.(htm|html)/?$ /tags.php [NC]
+    RewriteRule ^tagcloud.(htm|html)/?$ /tags.php [NC]
+    
+    #############
+    # RSS / RSS Feed
+    #############
+    
+    RewriteRule rss/(.*)-(.*)-(.*).(xml)/?$ /modules/rss/rss.php?feed=$1&platform=$2&locale=$3
+    
+    #############
+    # custom pages with locale passed
+    # http://sgs.lan/filename-locale.html
+    #############
+    
+    RewriteRule ^(.+)-(.*).(htm|html)/?$ /page.php?id=$1&tmplocale=$2 [NC]
+    
+    #############
+    # custom pages
+    # http://sgs.lan/filename.html
+    #############
+    
+    RewriteRule ^(.+).(htm|html)/?$ /page.php?id=$1 [NC]
+    
+</IfModule>
+
+#############
+# Error document redirects
+#############
+
+ErrorDocument 400 /error.php?400
+ErrorDocument 401 /error.php?401
+ErrorDocument 403 /error.php?403
+ErrorDocument 404 /error.php?404
+ErrorDocument 500 /error.php?500
+
+#############
+# block requests for the following files
+#############
+
+<Files ~ "\.(xml|db|conf|class.php)$">
+	Order allow,deny
+	Deny from all
+</Files>

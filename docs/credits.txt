@@ -1,0 +1,111 @@
++ ----------------------------
++ SGS 1.0 Credits
++ ----------------------------
+Codbase
+----------------------------
+SGS updated by William Moffett
+
+
+Special thanks to Bjoern Klinggaard for the bPopup JQuery Plugin
+For more information on bPopup Go: http://dinbror.dk/blog/bPopup/
+
+QA Testing
+----------------------------
+XML / SGS 
+Keith Souhrada
+
+
++ ----------------------------
++ SGS 0.9 Credits
++ ----------------------------
+
+Codbase
+----------------------------
+updated by William Moffett
+
+Language Translation
+----------------------------
+Dutch: Boudewijn Rombouts
+Brazilian Portuguese: Alline De Paula and Wagner Miranda
+Italian: Nicola Spera
+Danish: Adam P. Savel
+Swedish: Lena C. Bundy
+
+QA Testing
+----------------------------
+XML / SGS 
+Keith Souhrada
+Brian Guthrie
+
+Additional Support Credits
+----------------------------
+Tizzy Asher
+Gabriela Franc
+Andrew McNett
+
++ ----------------------------
++ SGS 0.8 Credits
++ ----------------------------
+
+Templates
+----------------------------
+updated by William Moffett
+banner Tags removed by Matt Tucker
+
+Codbase
+----------------------------
+updated by William Moffett
+channel/identifier changes by Matt Tucker
+
+Languages
+----------------------------
+Japanese translation by Naoko Isenhart
+Japanese translation updates by Hitomi Wedell
+Spanish translation by Adriana Flores
+German translation by Ben Dame
+French translation by Sebastien Petit
+
+QA Testing
+----------------------------
+XML / SGS 
+Keith Souhrada
+Narayan Pallipamu
+
+special thanks to Keith as always for his unwavering support.
+Narayan you are now the official SGS QA bro.. :P
+
++ ----------------------------
++ SGS 0.7 Credits
++ ----------------------------
+Templates
+----------------------------
+Designed by Narisa Spaulding
+Coded by William Moffett
+
+Languages
+----------------------------
+Locallization code by William Moffett and Jesse Stewart
+
+English language files by William Moffett
+German translation by Ben Dame
+French translation by Sebastien Petit
+
+QA Testing
+----------------------------
+
+Keith Souhrada
+Special thanks to keith for his unwavering testing support.
+
+Icons
+-----------------------------
+Icons used in SGS 0.7 Admin area are part of the Silk icon set 1.3 by Mark James
+Please visit [ http://www.famfamfam.com/lab/icons/silk/ ] for more information.
+
+Modifications and additional Icons by William Moffett
+http://qwell.org
+
+Icons licensed under Creative Commons Attribution 2.5 License.
+[ http://creativecommons.org/licenses/by/2.5/ ]
+
+
+

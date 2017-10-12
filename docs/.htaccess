@@ -1,0 +1,6 @@
+RewriteEngine Off
+ErrorDocument 400 /docs/index.php?400
+ErrorDocument 401 /docs/index.php?401
+ErrorDocument 403 /docs/index.php?403
+ErrorDocument 404 /docs/index.php?404
+ErrorDocument 500 /docs/index.php?500

@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Satellite Gamesite System - Install</title>
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<!-- 	
+	 * SGS: Install.
+	 * File: index.htm
+	 *
+	 * Copyright (c) 2007 - 2011 Big Fish Games, Inc.
+	 *
+	 * This program is free software; you can redistribute it and/or
+	 * modify it under the terms of the GNU General Public License
+	 * as published by the Free Software Foundation; either version 2
+	 * of the License, or (at your option) any later version.
+	 *
+	 * This program is distributed in the hope that it will be useful,
+	 * but WITHOUT ANY WARRANTY; without even the implied warranty of
+	 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	 * GNU General Public License for more details.
+	 *
+	 * You should have received a copy of the GNU General Public License
+	 * along with this program; if not, write to the Free Software
+	 * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+	 *
+	 * @author William Moffett <william.moffett@bigfishgames.com>
+	 * @version 1.0
+	 * @package PNP Tools
+	 * @subpackage SGS
+	 * @copyright Copyright (c) 2007 - 2011 Big Fish Games, Inc.
+	 * @license http://creativecommons.org/licenses/GPL/2.0/ Creative Commons GNU GPL
+	-->	
+</head>
+<body>
+<div id="page">
+	<div id="header">
+		<h1>Satellite Gamesite System</h1>
+		<h2>v 1.0</h2>
+
+		<div id="utility">
+			<a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+		</div>
+		<div id="navigation">&nbsp;&nbsp;</div>
+	</div>
+	<div id="content">
+		<div id="main">
+			<a name="introduction"></a>
+  		 	<h3>Introduction</h3>
+      		<p>This document contains detailed installation information for the Satellite Gamesite System.</p>
+       		<p>The Satellite Gamesite System (SGS) offers a way to develop a Web presence utilizing the Big Fish Games XML data source.</p>
+
+			<a name="requirements"></a>
+			<h3>Requirements</h3>
+			<ul>
+			  <li><strong>PHP 5.2</strong>: The SGS requires a web server that has PHP 5.2 or greater installed.</li>
+			  <li><strong>Curl or allow_url_fopen</strong> :  Used to fetch XML game archives.</li>
+			  <li><strong>XML support</strong>: Used to parse XML game archive sources.</li>
+			  <li><strong>Disk Space</strong>: A complete SGS install requires approximately 9MB of disk space on your server.</li>
+			</ul>
+
+			<a name="installing"></a>
+			<h3>Installing</h3>
+			<p>The installation process is fairly simple. If your web server meets the requirements listed above, you should have no problem.</p>
+			<p>Just follow the guideline listed below for downloading, unpacking, and running the install script.</p>
+
+
+			<a name="downloading"></a>
+			<h4>Downloading &amp; Unpacking</h4>
+			<ul>
+			  <li>After downloading and unzipping the package, you need to upload the files to your server using an FTP client. SGS will run in your web server root or in a sub-directory.<br />
+			    <br />
+
+			    <ul>
+			      <li>Open your FTP client and connect to your web server.</li>
+			      <li>Move into the folder on your web server where web pages are stored, generally it's 'public_html', 'www' or 'html'.</li>
+			      <li>Copy all the files from the unzipped SGS package onto your web server.<br />
+			      </li>
+			    </ul>
+			  </li>
+			</ul>
+			<a name="filepermissions"></a>
+			<h4>Set File Permissions</h4>
+			<ul>
+			  <li>You now need to set the file permissions for a few folders and files.<br />
+			     Set the file permissions to 0777 (read and write by the server) for the following files:<br /><br />
+			    <ul>
+			      <li>config.php</li>
+			      <li>_cache/</li>
+			      <li>_custom/</li>
+			      <li>_data/</li>
+			      <li>_data/siteconfig.db</li>
+			      <li>_data/moduleconfig.db</li>
+			      <li>_data/moduleprefs.db</li>
+			    </ul>
+			  </li>
+			</ul>
+
+
+
+			<a name="runinstall"></a>
+			<h4>Run the install Script</h4>
+		   <p> Now open your Web browser and navigate to install.php. Examples: <em>http://yourwebspace.com/install.php</em> or <em> http://yourwebspace.com/sgs/install.php</em>.</p>
+		   <p>If all the files have been uploaded successfully, you will see the first page of the install script.</p>
+	        <h5>Stage 1 - System Requirement Checks</h5>
+		    <ul><li>SGS will now carry out a series of tests to see if the minimum system requirements are met, and that all files which need permissions set have the correct settings.</li>
+			</ul>
+			<h5> Stage 2 -  Verify your Affiliate Account</h5>
+			<ul>
+		      <li>Next, enter your Affiliate Username. The install script will test to see if the username exists in our database.</li>
+		      <li>If everything is correct, SGS will return your Affiliate Code, which you can verify by visiting the <a href="https://affiliates.bigfishgames.com/account/index.php" target="_blank">Account Overview</a>.</li>
+		      <li>If the error message <strong>Username: ( name entered ) Failed!</strong> is displayed, go to <a href="https://affiliates.bigfishgames.com" target="_blank">https://affiliates.bigfishgames.com</a>, sign in and view your account information Account Overview under Account Overview. There you will find your Username and Affiliate Code.<br />
+		      Once you have this information, return to the previous install stage an make sure you entered the correct Username.</li>
+		  </ul>
+
+				<h5>Stage 3 - Site Administration</h5>
+				<ul>
+				<li>Setting up your SGS administration account is fairly straight forward. Enter your desired site admin username, password and password verification. This will be the account used to administer your SGS site.</li>
+				</ul>
+				<h5>Stage 4 - Site Preferences</h5>
+
+				<ul>
+		      <li>You will be asked to enter your <em>Site Name</em>, <em>Site Tagline</em>,  <em>Site Template and  preferred XML cache time</em>.</li>
+		      <li>If all is well, the last button will provide you with a link to your new SGS Web site.</li>
+		    </ul>
+
+
+
+		<a name="secureyoursite"></a>
+		<h4>Secure your site</h4>
+		  <ul>
+		    <li>You must now set the file permissions of the main config.php file back to 0644. </li>
+		    <ul>
+		      <li>Using your FTP client, select the config.php file.</li>
+		      <li>Set its file permission to 0644.</li>
+
+		    </ul>
+		    </li>
+		    <li><em>Then, delete the install.php file. If you do not, this could pose a potential security risk to your site.</em></li>
+  		 </ul>
+
+		<a name="siteadmin"></a>
+		<h4>Site Administration</h4>
+			<ul>
+		    <li>Once your site is installed you can log-in and make additional changes to your site thru the administration area. </li>
+		    <ul>
+		      <li>If you login with the sidebar menu you should see an <strong>Admin Area</strong> link. Click the link to enter your administration area.</li>
+		      <li>You can also login by going to http://<em>yourwebspace.com</em>/admin/ or http://<em>yourwebspace.com/sgs</em>/admin/ if sgs is installed in a sub directory.</li>
+		    </ul>
+		    </li>
+  		 </ul>
+		<br />
+		<br />
+		</div>
+		<div id="sidebar">
+			<h4>Contents</h4>
+			<p><a href="#introduction">Introduction</a></p>
+			<p><a href="#installing">Installing</a></p>
+			<p><a href="#downloading">Downloading &amp; Unpacking	</a></p>
+			<p><a href="#filepermissions">Set File Permissions</a></p>
+			<p><a href="#runinstall">Run the install Script</a></p>
+			<p><a href="#secureyoursite">Secure your site</a></p>
+			<p><a href="#siteadmin">Site Administration</a></p>
+		</div>
+		<br class="clearfix" />
+	</div>
+	<div id="footer">
+
+		<div id="fcontent">
+		</div>
+		<div id ="copyright">
+		&copy; 2007 Big Fish Games, Inc. All Rights Reserved.<br/>
+		<a href="http://affiliates.bigfishgames.com/privacy.php" target="_blank">Privacy Policy</a>&nbsp;|&nbsp;
+		<a href="http://affiliates.bigfishgames.com/terms.php"  target="_blank">Terms of Use</a>&nbsp;|&nbsp;
+		</div>
+	</div>
+</div>
+</body>
+</html>

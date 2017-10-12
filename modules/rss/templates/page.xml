@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="{G_ABSOLUTE}rss.xsl" ?>
+
+<!-- generator="{GENERATOR} {VERSION}" -->
+
+<rss version="2.0">
+  <channel>
+    <title>{TITLE}</title>
+
+    <link>{LINK}</link>
+
+    <description>{DESCRIPTION}</description>
+
+    <language>{LANGUAGE}</language>
+
+    <copyright>{COPYRIGHT}</copyright>
+
+    <pubDate>{PUBDATE}</pubDate>
+
+    <lastBuildDate></lastBuildDate>
+    <docs>http://backend.userland.com/rss</docs>
+    <generator>{GENERATOR}</generator>
+
+    <ttl>60</ttl>
+    <template>templates/wanda</template>
+{MAIN}
+  </channel>
+</rss>

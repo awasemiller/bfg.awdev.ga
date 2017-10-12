@@ -1,0 +1,162 @@
+---------------------------------------------------------------------------------------------------
+SGS 1.0x
+---------------------------------------------------------------------------------------------------
+-- core_gamesite.php complete rewrite.
+   removed all but one original constant.
+   only 'ADMINDISPLAY' remains.
+   The number of constants have been reduced in favor of the new Configuration methods.
+   -------------
+   New Constants
+   -------------
+   'SGS_WEB_ROOT' file system path to application
+   'SGS_BASE_URL' webserver path to application
+   'SGS_INIT'     this define is set once environment basic configuration is initialized 
+   'SGS_SELF'     the filename of the currently executing script, relative to SGS_WEB_ROOT
+   'SGS_PAGE'     the executing script file name
+   'SGS_QUERY'    the query string, if any.
+   'PLATFORM'     the current game platform
+   'LOCALE'       the current language
+   
+-- we no longer use I-frames, it is no longer required to set cookies...    
+-- config.php
+   new $config key [sgs_version] old $config key [version]
+-- The entire core has been replaced or modified. the majority of the old classes and methods 
+   that remain are all statically envoked.
+   There is alot more to cleanup and document but this release puts SGS in a state were
+   we can finally start doing some awsome forward development.
+-- global $sl or site loader no longer exists. SGS now uses a custom autoloader.
+-- events that were registered in site loader are registered in the Site_Event class.
+   you will find all registered events in the core_gamesite.php
+-- core.js updated, JQuery is now a dependency.
+   methods open_window and FitPic are deprecated.
+   Screen shots and video player make use of the bPopup plugin.
+-- GLOBALS
+   removed the following global variables   [$sl object site loader],
+   [$sp object site parse], [$config array values from config.php use Configuration::get('keyname) to retrieve a value] 
+   [$error]
+-- all page view now require the author to start and end the page.
+   page start has been removed from core_gamesite
+   Example Page Code:
+        <?php    
+        require_once('../core_gamesite.php');
+        Site_Parse::page_start();
+        echo 'hellow world!';
+        Site_Parse::page_end();
+        ?>   
+   
+   --------------------------------------------------
+    The following are deprecated values for all games.
+
+-- removed back links, they are no longer required as we have removed the dependency on I-frames
+-- gametype replaced with platform
+
+   TEMPLATES ------------
+-- template/functions.php
+   new var [$sgs_version] replaces [$sgsversion] make sure to make this change when upgrading your template
+-- main_download.html renamed main_platforms.html, this template is now used for display on both
+   download-games and online-games views.
+-- removed main_request.html main_online.html, onlinefeature.html, onlinegame.html, onlinesubfeature.html as they are no longer in use.
+
+-- methods setOnlineFeatureGame and setOnlineGenreGames have been removed
+-- constants OGPLAYBGCOLOR, ONLINEIFRAMEWIDTH, ONLINEIFRAMEHEIGHT, ADD_ONLINEIFRAMEWIDTH, ADD_ONLINEIFRAMEHEIGHT
+   in template function are deprecated. 
+-- the following page locations were removed, [image.php,request.php and sitemap.php]
+
+
+---------------------------------------------------------------------------------------------------
+SGS 0.9
+---------------------------------------------------------------------------------------------------
+-- core_gamesite.php replaced eregi method calls as the function has been DEPRECATED as of PHP 5.3.0.
+
+	sgs_eregi
+	Temporary method.
+	Use only for simple string matches only.
+	Do not use for regular expression pattern matches
+
+	Example:
+	
+	Deprecated method
+	$eregi_val = eregi('install', 'install.php');
+	
+	Temporary method
+	$sgs_eregi_val = sgs_eregi('install', 'install.php');
+	
+-- changed sgstracking value to cookie from session. PHP 5.3 has session issues with some default php installations.
+   you can change this setting back to session if you prefer in the config.php on line 28.
+   for those of you who deploy on Ubuntu systems with PHP 5.3 and experience session errors due to garbage collection.
+   see http://somethingemporium.com/2007/06/obscure-error-with-php5-on-debian-ubuntu-session-phpini-garbage
+-- added support for five new languages [ Danish, Italian, Dutch, Portuguese and Swedish ].
+   some admin area translations still need work.
+-- added ability to set default language on install and upgrade. 
+-- added ability to clear cache for a given page view.
+   set $sl->class['site_pagecache']->resetPage = true; befor page display and cache will be reset after page render.
+   see site comments method deleteComment as an example of this.
+-- page cache is now disabled when user is in admin mode. the site will render slower while you
+   are admin however this will allow you to view changes. log out to view the site as a normal visitor.     
+
+---------------------------------------------------------------------------------------------------
+SGS 0.8
+---------------------------------------------------------------------------------------------------
+-- Updated URL's in SGS to use new-style channel/identifier format.
+-- Updated various variables/parameters/constants to not use "afcode" name. BFGAFCODE to BFGIDENTIFIER
+-- banners and supporting parse tags were removed
+-- added spanish and japanese language support
+-- added _include/site_genre.class.php used to request genre information
+-- added primary genre support, new xml feed and class for dynamic genre information
+-- removed the following language keys which were used for genre information.
+	( genre_info_1_caption,	genre_info_1_text
+	genre_info_2_caption, genre_info_2_text
+	genre_info_3_caption,genre_info_3_text
+	genre_info_4_caption,genre_info_4_text
+	genre_info_5_caption,genre_info_5_text
+	genre_info_6_caption,genre_info_6_text)
+-- added spanish and Japanese language support to all modules
+-- gameinfo.php removed parse tags GAMEINFO_TRIAL_TEXT and GAMEINFO_BUY_TEXT
+-- gameinfo.php added parse tags GAMEINFO_FREE_TEXT, GAMEINFO_OR_TEXT and GAMEINFO_UNLIMITED_TEXT
+-- added _include/site_pagecache.class.php used to cache main content for faster render times.
+-- added ability to cache modules
+-- added page and module cache options to admin
+-- removed the following language keys
+	( index_feature_glrelease,index_feature_glrank,
+	index_feature_action,index_feature_card,index_feature_mahjong,
+	index_feature_puzzle,index_feature_word)
+	all were used for the feature game.
+-- added language keys ( featured_download_newgame, featured_download_topgame ) theese are used on the download-games.php
+-- added {FEATURETEXT} parse tag wich displays featured_download_newgame and featured_download_topgame language in the main_download.html template
+-- removed toRss function from _include/site_parseXml.class.php. the function is no longer used
+-- removed gameButtons function from _include/site_game.class.php. This was an sgs v0.6 method.
+-- removed getFeatureImage function from _include/site_game.class.php. This was an sgs v0.6 method.
+-- removed genreListCaptions function from _include/site_game.class.php. method is no longer used in download-games.php
+-- removed featureListCaption function from _include/site_game.class.php. method is no longer used in download-games.php
+-- added the following template constants ONLINEIFRAMEWIDTH, ONLINEIFRAMEHEIGHT, ADD_ONLINEIFRAMEWIDTH, ADD_ONLINEIFRAMEHEIGHT
+	see any template function.php file for more information.
+-- removed {CAPTION} parse tag from genrelist.html, it has been replaced with {GENRELISTCAPTION}
+-- update Module RSS. SGS now generates it's own RSS Dynamic feeds for Download Games.
+-- added administration area translations for all languages.
+
+---------------------------------------------------------------------------------------------------
+SGS 0.7
+---------------------------------------------------------------------------------------------------
+-- removed modules/gamenav module and replaced with featured areas module
+-- added _include/site_download.class.php used to request download game information
+-- added _include/site_online.php used to request online game information
+-- index.php now only handles redirects download game display is now handled by download-games.php
+-- added download-games.php primary download game display page
+-- added online-games.php primary online game display page
+-- added play.php used to display online playable game
+-- updated gameinfo.php now uses new game calls. supports pc mac and online games.
+-- updated _include/* all classes have been updated to support new game calls and languages
+-- added language/[en | de | fr ] folders for localized support
+-- added localized support for all modules.
+-- added SEO url for online games
+-- updated all core templates
+-- added online module
+-- updated search.php and browse.php to new game calls and page rendering. all templates will require an updated games.html
+-- {LINK} tag now returns a game named link Example <a href="gameinfo.php?id=3&amp;foldername=5spots2&amp;local=en&amp;gtype=pc">5 Spots II</a> for more information see gameinfo function changes
+-- added define GAMES_TEMPLATE_RENDER with param plain to display template without contentstyle applied.
+-- PRE_PAGINATE | POST_PAGINATE defines have been renamed to PRE_PAGINATION | PRE_PAGINATION. The default class is renamed pagination
+-- added define OGPLAYBGCOLOR used to pass background color to online iframe page
+-- added define ONLINEFEATURE_TEMPLATE_RENDER with param plain to display online feature game without contentstyle applied
+-- removed getRSS function from site_game class.
+-- templates now require $sgs_version var in there function.php the current required ver should be set to 0.7 in order to be compatible with this release.
+-- many more changes.. If you have questions feel free to contact me at william.moffett@bigfishgames.com

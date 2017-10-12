@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Satellite Gamesite System - Upgrade</title>
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<!-- 	
+	 * SGS: Upgrade.
+	 * File: upgrade.htm
+	 *
+	 * Copyright (c) 2007 - 2011 Big Fish Games, Inc.
+	 *
+	 * This program is free software; you can redistribute it and/or
+	 * modify it under the terms of the GNU General Public License
+	 * as published by the Free Software Foundation; either version 2
+	 * of the License, or (at your option) any later version.
+	 *
+	 * This program is distributed in the hope that it will be useful,
+	 * but WITHOUT ANY WARRANTY; without even the implied warranty of
+	 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	 * GNU General Public License for more details.
+	 *
+	 * You should have received a copy of the GNU General Public License
+	 * along with this program; if not, write to the Free Software
+	 * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+	 *
+	 * @author William Moffett <william.moffett@bigfishgames.com>
+	 * @version 1.0
+	 * @package PNP Tools
+	 * @subpackage SGS
+	 * @copyright Copyright (c) 2007 - 2011 Big Fish Games, Inc.
+	 * @license http://creativecommons.org/licenses/GPL/2.0/ Creative Commons GNU GPL
+	-->		
+</head>
+<body>
+<div id="page">
+	<div id="header">
+		<h1>Satellite Gamesite System</h1>
+		<h2>v 1.0</h2>
+
+		<div id="utility">
+			<a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+		</div>
+		<div id="navigation">&nbsp;&nbsp;</div>
+	</div>
+	<div id="content">
+		<div id="main">
+			<a name="link"></a>
+  		 	<h3>Introduction</h3>
+      		<p>This document contains  information on how to perform an upgrade of SGS 0.9 to SGS 1.0.</p>
+
+ 			<a name="upgrade"></a>
+			<h3>Upgrade</h3>
+
+			<strong>Backup custom templates and modules.</strong>		    
+			<ul>
+				<li>Backup any custom modules you have created.</li>
+				<li>Backup any custom templates you have created.</li>
+			</ul>
+			<strong>Remove old files</strong>
+			<ul>
+			 <li> remove all files from the _include/ directory</li>
+			 <li> remove all files from the _cache/ directory</li>
+			</ul>		    
+			<p>Once the files and folders above have been removed, perform the install process as described in the<a href="install.htm"> install documentation</a> as if you were deploying your site for the first time.</p>
+
+
+ 			<a name="postupgrade"></a>
+			<h3>Post Upgrade</h3>
+			<ul>
+				<li>To test your custom SGS 0.9 Template on SGS.1.0 update the $sgs_version variable in your templates functions.php. [ $sgs_version = '1.0'; ] <br />
+				    This will allow you to select your custom template in the administration area.<br />
+				    You can now make changes to your template code if required.<br />
+				    <strong>Please read the <a href="changelog.txt">changelog</a> for any changes to SGS 1.0 that may effect your template.</strong>
+				</li>
+			</ul>
+		    
+		</div>
+		<div id="sidebar">
+			<h4>Contents</h4>
+			<p><a href="#upgrade">Upgrade</a></p>
+		</div>
+		<br class="clearfix" />
+	</div>
+	<div id="footer">
+
+		<div id="fcontent">
+		</div>
+		<div id ="copyright">
+		&copy; 2007 Big Fish Games, Inc. All Rights Reserved.<br/>
+		<a href="http://affiliates.bigfishgames.com/privacy.php" target="_blank">Privacy Policy</a>&nbsp;|&nbsp;
+		<a href="http://affiliates.bigfishgames.com/terms.php"  target="_blank">Terms of Use</a>&nbsp;|&nbsp;
+		</div>
+	</div>
+</div>
+</body>
+</html>
+
+

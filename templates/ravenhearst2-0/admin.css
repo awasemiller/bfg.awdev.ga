@@ -1,0 +1,445 @@
+/* ###--------------------------------------------------------###
+ * Admin Area Style Raven Hearst 2-0 Template
+ *
+ * File: style.css
+ * 
+ * Copyright (c) 2007 - 2011 Big Fish Games, Inc.
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ *
+ *
+ * @author William Moffett <william.moffett@bigfishgames.com>
+ * @version 1.0
+ * @package PNP Tools
+ * @subpackage SGS
+ *
+ * @modified 01/06/2008 william
+ * @copyright Copyright (c) 2007 - 2011 Big Fish Games, Inc.
+ * @license http://creativecommons.org/licenses/GPL/2.0/ Creative Commons GNU GPL
+ */
+
+*{
+	margin:0px;
+	padding:0px;
+}
+
+/* BASE ELEMENTS */
+
+body{
+	margin:0px;
+	padding:0px;
+	font: normal .80em/1.6em "Courier New", Courier, Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	color:#333333;
+	text-align:center;
+	background:#000000 url(images/background.jpg) top center no-repeat;
+}
+
+a{
+	text-decoration:none;
+	color:#993300;
+}
+
+a:hover{
+	text-decoration:none;
+	color:#000000;
+}
+
+h1,h2,h3,h4,h5{
+	display:block;
+	margin:0px;
+	padding:0px;
+}
+
+h1{ font-size:20px; }
+h2{ font-size:18px; }
+h3{ font-size:16px; }
+h4{ font-size:14px; }
+h5{ font-size:12px; }
+
+p{
+	padding:5px;
+}
+
+ul, ol {
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+
+img{ border:none;}
+
+table{
+	width:100%;
+}
+
+td{
+	text-align:left;
+	vertical-align:top;
+}
+
+/* FORM ELEMENTS */
+
+form { }
+
+label {
+	margin:4px;
+	padding:2px;
+	display:block;
+	font-weight:bold;
+}
+
+input {
+	margin:4px;
+	padding: 2px;
+}
+
+input:hover {}
+
+select{
+	margin:4px;
+}
+
+select:hover {}
+
+textarea {
+	margin:4px;
+	padding:2px;
+	font: normal 1em "Courier New", Courier, Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	height:100px;
+	display:block;
+	color: #333333;
+	border:1px solid #b5a186;
+	background: #ffffff;
+}
+
+textarea:hover{
+	color:#000000;
+	border:1px solid #b5a186;
+	background: #ffffff;
+}
+
+/* FORM ELEMENT CLASSES */
+
+.textbox{
+	font: normal 1em "Courier New", Courier, Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	border:1px solid #b5a186;
+	background: #ffffff;
+}
+
+.textbox:hover{
+	color:#000000;
+	border:1px solid #b5a186;
+	background: #ffffff;
+}
+.textbox-disable{
+	font: normal 1em "Courier New", Courier, Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	color:#808080;
+	border:1px solid #b5a186;
+	background: #d4d0c8;
+}
+
+.textbox-disable:hover{
+	border:1px solid #b5a186;
+	background: #d4d0c8;
+	color:#808080;
+}
+
+input.button{
+	font-weight:bold;
+	color:#ffffff;
+	background-color:#3d1d08;
+	border:1px solid #ffffff;
+	border-bottom:1px solid #a09086;
+	border-right:1px solid #a09086;
+}
+
+input.button:hover{
+	background-color:#5c371f;
+	border:1px solid #ffffff;
+	border-bottom:1px solid #a09086;
+	border-right:1px solid #a09086;
+	cursor:pointer;
+}
+
+a.button{
+	width:80px;
+	margin:4px;
+	padding:4px;
+	font: bold 1em/1.1em "Courier New", Courier, Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	display:block;
+	color: #ffffff;
+	text-align:center;
+	border:1px solid #1b83de;
+	border-right:1px solid #004499;
+	border-bottom:1px solid #004499;
+	background: #004499 url(images/btn_right.gif) 0px -6px repeat-x;
+}
+
+a:hover.button{
+	color:#ffffff;
+	border:1px solid #2299f1;
+	border-right:1px solid #0466bf;
+	border-bottom:1px solid #0466bf;
+	background: #004499 url(images/btn_right.gif) 0px -41px repeat-x;
+}
+
+
+
+
+/* PAGE LAYOUT */
+
+div#page{
+	margin:0px auto;
+	padding:0px;
+	text-align:left;
+}
+
+div#header{
+	position:relative;
+	margin:0px;
+	padding:0px;
+	height:132px;
+	background: transparent url(images/header.gif) top center no-repeat;
+	border-right: 1px solid #bed7e3;
+	border-left:1px solid #bed7e3;
+}
+
+/* HEADER ELEMENTS */
+
+div#header h1, div#header h2{
+	position:absolute;
+	top:0px;
+	margin:0px;
+	color:#ffffff;
+}
+
+div#header h1{
+	padding:0px 0px 0px 35px;
+	left:0px;
+	line-height:105px;
+	text-align:left;
+	font-size:30px;
+}
+
+div#header h2 {
+	top:70px;
+	right:-1px;
+	padding-right:20px;
+	width:100%;
+	text-align:right;
+}
+
+/* MAIN CONTAINER */
+
+table#admin{
+	width:98%;
+	margin:auto;
+}
+
+td#left{
+	padding:0px 0px 0px 0px;
+	width:210px;
+}
+
+td#center{
+	padding:0px 20px 0px 20px;
+	width:auto;
+	text-align:center;
+}
+
+td#right{
+	padding:0px 0px 0px 0px;
+	width:210px;
+}
+
+div#footer{
+	padding:20px;
+	text-align:center;
+}
+
+/* GENERAL CLASSES */
+
+li.button{
+	margin:0px;
+	padding:0px;
+}
+
+li.button a{
+	display:block;
+	margin:2px 0px;
+	padding:4px;
+	height:100%;
+	color:#333;
+	border:1px solid #b5a186;
+	background-color: #edd6b4;
+	font-weight:bold;
+}
+
+li.button a:hover{
+	color:#ffffff;
+	color:#333;
+	background-color: #fef2dd;
+}
+
+li.current a{
+	color:#333;
+	background-color: #fef2dd;
+}
+
+/* SITE INFO SIDEBAR */
+.siteinfo{
+	margin:0px 0px 5px 0px;
+	padding:0px;
+}
+
+.siteinfo li{
+	margin:2px;
+	padding:4px 4px;
+	border:1px solid #b5a186;
+}
+
+
+/* MODULE CONFIG SIDEBAR */
+
+#module_config{
+	margin:0px 0px 5px 0px;
+}
+
+#module_config label{
+	margin:0px;
+	border:1px solid #b5a186;
+	background-color: #edd6b4;
+}
+
+#module_config select{
+	display:block;
+	clear:right;
+}
+
+/* CONTAINER HEADERS */
+
+#center h3{
+
+	padding:10px;
+	text-align:left;
+}
+
+#left h4, #right h4{
+	padding:10px;
+}
+
+.tableheader{
+	padding:4px;
+	border:1px solid #b5a186;
+	background: #edd6b4;
+	color:#000000;
+}
+
+.tablerow{
+	background-color:#ffffff;
+}
+
+.tablecell{
+	padding:4px;
+	border:1px solid #b5a186;
+}
+
+.tablecontent{
+	width:98%;
+	margin: 0px auto 10px auto;
+}
+
+#center  tr{
+	background-color:#fef2dd;
+}
+
+#center  td{
+	padding:4px;
+	border:1px solid #b5a186;
+}
+
+
+#center  td:hover{
+	background-color:#fef2dd;
+}
+
+
+/* MODULE BOX */
+
+.top{
+
+	background: #fef2dd url(images/block.jpg) top left no-repeat;
+	border-bottom:1px solid #b5a186;
+}
+
+.bottom{
+	/*border:1px solid #d7e9fd;
+	background: #ffffff url(images/block_bottom.jpg) bottom left repeat-x;
+	*/
+	background-color: #fef2dd;
+	border:2px solid #b5a186;
+	border-left:none;
+	border-top:none;
+}
+
+.text{
+	text-align:left;
+	padding:2px;
+}
+
+.error{
+	margin: 0px 10px 4px 10px;
+	padding:5px 5px 5px 25px;
+	border:1px solid #f0c000;
+	background:#ffffce url(../../images/icons/icon_error.gif) 10px 10px no-repeat;
+}
+
+.success{
+	margin: 0px 10px 4px 10px;
+	padding:5px 5px 5px 25px;
+	border:1px solid #009900;
+	background:#ddffdd url(../../images/icons/icon_check.gif) 10px 10px no-repeat;
+}
+
+#center .success h4{
+	color:#009900;
+	padding:3px 0px 0px 5px;
+}
+
+#center .error h4{
+	color:#f0c000;
+	padding:3px 0px 0px 5px;
+}
+
+/* OVERRIDE CSS */
+
+#allow_comments{
+	width:auto;
+}
+
+#LoginForm{
+	margin: 0px auto 10px auto;
+	width:170px;
+	text-align:left;
+	border:none;
+}
+
+#LoginForm p.error{
+	padding:10px 5px 10px 30px;
+}
+
+#LoginForm input{
+	width:auto;
+}

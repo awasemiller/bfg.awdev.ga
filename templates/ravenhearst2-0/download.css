@@ -1,0 +1,91 @@
+/* used for download request page */
+*{
+	margin:0px;
+	padding:0px;
+}
+
+body{
+	margin:0px;
+	padding:0px;
+	font: 11px/14px Verdana, Arial, Helvetica, sans-serif;
+	text-align:center;
+	color:#ffffff;
+	background:#000000;
+}
+ 
+h3{
+	height:46px;
+	font-size: 1.8em;
+	line-height:46px;
+	/* color:#C34E23; */
+	color:#ffffff;
+	
+	font-weight: normal;
+	letter-spacing: 0px;	
+	background:transparent url(../../images/logo/bfglogo.png) top left no-repeat;
+}
+
+h4{
+	margin: 1em 0px;
+	font: normal 1.8em Georgia, "Times New Roman", Times, serif;
+	/* color:#222; */
+	color:#C34E23;
+	letter-spacing:-1px;	
+}
+
+
+#dlbox {
+	margin:0px 0px 20px 0px;
+	width:526px;
+	background: #fef2dd url(images/block.jpg) top left no-repeat;
+	border:2px solid #b5a186;
+	border-left:none;
+	border-top:none;
+	color:#000000;
+}
+
+/* 
+#dlbox {
+	margin:0px;
+	padding:0px;
+	border: 1px solid #efefef;
+}
+*/
+#dlbox div{
+	margin: 0px;
+	padding: 0px;
+	/* background: #f8f8f8;	 */
+}
+
+#dlbox .dltopbox {
+	height: 10px;
+	overflow: hidden;
+	border:none;
+}
+
+#dlbox .box1 {
+	padding: 0px 10px 10px 10px;
+}
+
+#dlbox .box2, #dlbox .box3 {
+	padding: 10px;
+}
+
+#dlbox .dlbotbox {
+	height: 10px;
+	/* background: #f8f8f8; */
+}
+
+.download{
+	display:block;
+	margin:0px auto;
+	width:129px;
+	height:34px;
+}
+
+.continue{
+	display:block;
+	margin:0px auto;
+	width:129px;
+	height:34px;
+}

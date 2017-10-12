@@ -1,0 +1,1097 @@
+/* ###--------------------------------------------------------###
+ * Spring Template
+ *
+ * Copyright (c) 2007 - 2011 Big Fish Games, Inc.
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ *
+ * @author William Moffett <william.moffett@bigfishgames.com>
+ * @author Narisa Spaulding <narisa.spaulding@bigfishgames.com> on 5/23/2007
+ * @version 1.0
+ * @package PNP Tools
+ * @subpackage SGS
+ *
+ * @modified 01/06/2008 william
+ * @copyright Copyright (c) 2007 - 2011 Big Fish Games, Inc.
+ * @license http://creativecommons.org/licenses/GPL/2.0/ Creative Commons GNU GPL
+ */
+
+
+/* base elements */
+*{
+	margin:0px;
+	padding:0px;
+}
+
+body{
+	margin:0px;
+	padding:0px;
+	font: normal .70em/1.6em Arial, Helvetica, sans-serif;
+	color: #663300;
+	text-align:center;
+	background:#edfbe4 url(images/SGS_theme_spring.jpg) no-repeat fixed center top;
+
+}
+
+a{ text-decoration:none; color: #006600;}
+a:hover{ text-decoration:underline; color: #008800;}
+
+h1,h2,h3,h4,h5{
+ 	font-family: Helvetica, Arial, Tahoma, sans-serif;
+ 	font: normal 1.8em;
+	color: #663300;
+}
+
+h1{ font-size: 1.8em;}
+h2{ font-weight: bold; font-size: 1.6em;}
+h3{ font-size: 1.4em;}
+h4{ font-weight: bold; font-size: 1.3em;}
+h5{ font-size: 1em;}
+
+p{}
+
+ul { margin:0; padding:0; list-style-type:none; }
+
+td{
+	vertical-align:top;
+}
+
+/* images */
+img{ border-color: #f1d9c2;}
+
+img.no-border {
+	border: none;
+}
+
+img.float-right {
+  margin: 5px 0px 5px 10px;
+}
+
+img.float-left {
+  margin: 5px 10px 5px 0px;
+}
+
+/* object code  - added by william */
+object{
+	padding: 5px;
+}
+
+object.no-border {
+	border: none;
+}
+
+object.float-right {
+  margin: 5px 0px 5px 15px;
+}
+
+object.float-left {
+  margin: 5px 15px 5px 0px;
+}
+
+/* form elements */
+form {
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #ddf0d4;
+	background: #f7fee6;
+}
+
+label {
+	display:block;
+	font-weight:bold;
+	margin:5px;
+	padding: 2px;
+}
+
+input {
+	margin:0px 5px 0px 5px;
+	padding: 2px;
+	border:1px solid #c9e3be;
+	font: normal 1em Arial, Helvetica, Verdana, Tahoma, 'Trebuchet MS', Sans-serif;
+	color: #663300;
+	background: #ffffff url(images/textbox.gif) top left repeat-x;
+
+}
+
+input:hover {
+	border:1px solid #006600;
+	background: #ffffff url(images/textbox_hover.gif) top left repeat-x;
+}
+
+textarea {
+	width: 280px;
+	margin:0px 5px 5px 5px;
+	padding: 2px;
+	border:1px solid #c9e3be;
+	font: normal 1em Arial, Helvetica, Verdana, 'Trebuchet MS', Tahoma, sans-serif;
+	height:100px;
+	display:block;
+	color: #666666;
+	background: #ffffff url(images/textbox.gif) top left repeat-x;
+}
+
+textarea:hover{
+	border:1px solid #ddf0d4;
+	background: #ffffff url(images/textbox_hover.gif) top left repeat-x;
+}
+
+/* helper classes */
+.clear { clear: both; }
+.clear-both{ clear:both; }
+.clear-left{
+	clear:left;
+}
+
+.clear-right{
+	clear:right;
+}
+
+.clearfix{
+	display:block;
+	clear:both;
+	height:1px;
+}
+
+.float-left  { float: left; }
+.float-right { float: right; }
+.align-left  {	text-align: left; }
+.align-right {	text-align: right; }
+.align-center{ text-align:center; }
+
+.textbox{
+	border:1px solid #c9e3be;
+	font: normal 1em Arial, Helvetica, Verdana, sans-serif;
+	color:#663300;
+}
+
+.textbox:hover{
+	border:1px solid #006600;
+}
+
+/* page layout */
+
+#page{
+	margin:0px auto;
+	padding:0px;
+	width:760px;
+	text-align:left;
+	background:transparent url(images/layout_tile.gif) top left repeat-y;
+}
+
+#header{
+	position:relative;
+	margin:0px;
+	padding:0px;
+	width:758px;
+	height:141px;
+	background: transparent url(images/header.gif) top left repeat-x;
+	border-right: 1px solid #c9e3be;
+	border-left:1px solid #c9e3be;
+}
+
+#content{
+	margin:0px;
+	padding:0px 0px 14px 0px;
+	background: transparent url(images/layout_bottom.gif) bottom left no-repeat;
+}
+
+/* content elements */
+
+#main{
+	margin:0px;
+	padding:20px 0px 0px 10px;
+	width:570px;
+	float:left;
+	text-align:left;
+}
+
+/**
+ * fullscreen layout used for the play.php for online games.
+ */
+#main_wide{
+	margin:0px;
+	padding:0px 0px 0px 0px;
+	width:760px;
+	float:left;
+	text-align:left;
+}
+
+#sidebar{
+	margin:0px 10px 0px 10px;
+	padding:20px 0px 0px 0px;
+	width:155px;
+	float:right;
+	text-align:left;
+}
+
+#footer{
+	margin:0px;
+	padding:34px 0px 0px 0px;
+	width:760px;
+	clear:both;
+	background:#edfbe4 url(images/layout_top.gif) left 20px no-repeat;
+	text-align:center;
+}
+
+#fcontent{
+	margin:0px;
+	padding:0px 0px 8px 0px;
+	background:transparent url(images/layout_tile.gif) top left repeat-y;
+
+}
+
+#copyright{
+	background:#d9d9d9;
+}
+
+/* header elements */
+
+#header h1, #header h2{
+	position:absolute;
+	color:#ffffff;
+}
+
+#header h1{
+	top:30px;
+	left:35px;
+ 	font: bold 2.5em Arial, Helvetica, Verdana, Tahoma, Arial, Helvetica, sans-serif;
+ 	z-index:101;
+}
+
+#header h1 a,#header h1 a:hover{
+	color:#ffffff;
+	text-decoration:none;
+	background:transparent;
+	outline:none;
+}
+
+#header h2 {
+	top:0px;
+	right:-1px;
+	padding-right:20px;
+	width:750px;
+	height:109px;
+	line-height:159px;
+	vertical-align:bottom;
+	text-align:right;
+	background: transparent url(images/bubbles.gif) top right no-repeat;
+}
+
+#utility{
+	position:absolute;
+	top:0px;
+	right:-1px;
+	display:inline;
+	margin:0px;
+	padding:0px 0px 0px 44px;
+	height:25px;
+	background: transparent url(images/utility.gif) top left no-repeat;
+	z-index:100;
+	font-size:0.9em;
+}
+
+#utility h4{
+	display:none;
+}
+
+#utility p{
+	margin:0px;
+	padding:0px 10px 0px 10px;
+	height:25px;
+	float:left;
+	line-height:25px;
+	background-color:#edfbe4;
+}
+
+#utility form{
+	margin:0px;
+	padding:0px;
+	border:none;
+}
+
+#utility input{
+	margin:0px;
+	padding:0px;
+}
+
+#utility input.button{
+	margin-top:2px;
+}
+
+
+#mainnavigation{
+    display:block;
+    position:absolute;
+    top:78px;
+    left:0px;
+    margin:0px 0px 0px 10px;
+    padding:0px 0px 0px 1px;
+    width:auto;
+    height:32px;
+    background: transparent url(images/header.gif) bottom left repeat-x;
+}
+
+
+#mainnavigation ul{
+    margin:0px;
+    padding:0px;
+    height:32px;
+}
+
+#mainnavigation ul li{
+    margin:0px;
+    padding:0px 0px 0px 0px;
+    list-style-type:none;
+    line-height:32px;
+    float:left;
+    background:transparent;
+}
+
+#mainnavigation ul li a{
+    display:block;
+    margin:0px;
+    padding:0px 10px 0px 10px;
+    height:31px;
+    line-height:32px;
+    font-weight:bold;
+    background:transparent url(images/divider.gif) top right no-repeat;
+    float:left;
+}
+
+#mainnavigation ul li a:hover{
+    background:#ffffff url(images/divider_sel.gif) top right no-repeat;
+    height:30px;
+    line-height:32px;
+    /*border-bottom:1px solid #8dbde3;*/
+}
+
+#mainnavigation ul li a.sel{
+    color:#000000;
+    height:31px;
+    background:#ffffff url(images/divider_sel.gif) top right no-repeat;
+    
+}
+
+#mainnavigation ul li a.sel:hover{
+    height:30px;
+    line-height:32px;
+    /*border-bottom:none;*/
+}
+/** example font size adjust for some languages 
+.page_jp #header #mainnavigation ul li a{
+    font-size:10px;
+}
+
+*/
+
+
+#navigation{
+	display:block;
+	position:absolute;
+	top:109px;
+	left:0px;
+	margin:0px 0px 0px 10px;
+	padding:0px 0px 0px 1px;
+	width:748px;
+	height:32px;
+	background: transparent url(images/divider.gif) top left no-repeat;
+}
+
+#navigation ul{
+	margin:0px;
+	padding:0px;
+	height:32px;
+}
+
+#navigation ul li{
+	margin:0px;
+	padding:0px 0px 0px 0px;
+	list-style-type:none;
+	line-height:32px;
+	float:left;
+	background:transparent;
+}
+
+#navigation ul li a{
+	display:block;
+	margin:0px;
+	padding:0px 10px 0px 10px;
+	height:32px;
+	line-height:32px;
+	font-weight:bold;
+	background:transparent url(images/divider.gif) top right no-repeat;
+	float:left;
+}
+
+#navigation ul li a:hover{
+	background:#ffffff url(images/divider_sel.gif) top right no-repeat;
+	height:31px;
+	line-height:32px;
+	border-bottom:1px solid #c9e3be;
+}
+
+#navigation ul li a.sel{
+	color:#c9e3be;
+	background:#ffffff url(images/divider_sel.gif) top right no-repeat;
+}
+
+#navigation ul li a.sel:hover{
+	height:32px;
+	line-height:32px;
+	border-bottom:none;
+}
+/** font size adjust for some languages */
+.page_sv #header #navigation ul li a,
+.page_pt #header #navigation ul li a,
+.page_jp #header #navigation ul li a{
+	font-size:10px;
+}
+/* BUTTON STYLES */
+
+/* input button */
+
+input.button{
+	width:auto;
+	margin:5px;
+	padding:2px;
+	font: bold 1em/1.1em Arial, Helvetica, Verdana, Tahoma, 'Trebuchet MS', sans-serif;
+	color: #ffffff;
+	border:1px solid #008800;
+	border-right:1px solid #006600;
+	border-bottom:1px solid #006600;
+	background: #006600;
+	cursor:pointer;
+}
+
+input:hover.button{
+	color:#ffffff;
+	border:1px solid #99cc33;
+	border-right:1px solid #008800;
+	border-bottom:1px solid #008800;
+	background: #99cc33;
+}
+
+/* anchor buttons */
+a.btn, span.btn{
+	margin:10px 0px 0px 0px;
+    padding: 0px 20px 0px 0px;
+    position: relative;
+    float: left;
+    font-weight: bold;
+    color: #ffffff;
+    background: transparent url(images/btn_right.gif) top right no-repeat;
+    text-decoration:none;
+}
+
+a.btn:hover, span.btn:hover{
+    background-position: right bottom;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+a.btn span,span.btn span {
+    display: inline;
+    position: relative;
+    float: left;
+    background-position: top left;
+    background-repeat: no-repeat;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+a.btn span, span.btn span{
+    height: 25px;
+    font-size: 11px;
+    line-height: 14px;
+    padding: 9px 0px 0px 40px;
+    background-image: url(images/btn_arrow.gif);
+}
+
+a.btn_download span{
+    background-image: url(images/btn_download.gif);
+}
+
+a.btn_cart span{
+    background-image: url(images/btn_cart.gif);
+}
+
+a.btn:hover span{
+    background-position: left bottom;
+}
+
+a#btnmac {
+	background-image:url(../../images/os/btn_available4mac.gif);
+}
+
+a#btnpc {
+	background-image:url(../../images/os/btn_available4pc.gif);
+}
+
+a#btnmac, a#btnpc{
+	height:34px;
+	margin:10px 0pt 0pt;
+	padding:0pt;
+	text-indent:-30000px;
+	width:90px;
+}
+
+/* content headers */
+
+/* main */
+#main h2{
+	padding: 0 0 5px 0;
+	margin: 0 15px 15px 15px;
+}
+
+#main h3{
+	padding: 10px 0 5px 0;
+	margin: 0 15px 0px 15px;
+	color:#663300;
+	font-weight:bold;
+}
+
+/* FEATURE BOX The round borders that display around the feature image */
+div.feature_tile{
+	margin:0px 0px 0px 10px;
+	padding:0px;
+	width:210px;
+	height:100%;
+	background:#ffffff url(images/feature_tile.gif) top left repeat-y;
+	float:left;
+}
+
+div.feature_top{
+	margin:0px;
+	padding:10px 0px 0px 0px;
+	width:210px;
+	height:100%;
+	background:transparent url(images/feature_top.gif) top left no-repeat;
+}
+
+div.feature_top h3{
+	margin:0px;
+	padding:0px;
+	text-align:center;
+	width:195px;
+}
+
+div.feature_bottom{
+	margin:0px;
+	padding:5px 0px 10px 0px;
+	width:210px;
+	height:100%;
+	background:transparent url(images/feature_bottom.gif) bottom left no-repeat;
+}
+
+
+/* MAIN CONTENT STYLES */
+
+/* main_index styles */
+#feature{
+	margin-left:5px;
+}
+
+.fgame{
+	margin:0px 0px 0px 8px;
+	padding:0px;
+	width:180px;
+	text-align:center;
+	list-position:inside;
+	line-height:1.2em;
+}
+
+.fgame li{
+	margin:0px auto;
+	width:180px;
+}
+
+.game{
+	margin:0px 0px 0px 10px;
+	padding:0px;
+	width:100px;
+	float:left;
+	list-position:inside;
+	line-height:1.2em;
+	overflow:hidden;
+}
+
+.fgame a, .game a{
+	font-weight:bold;
+}
+
+.game span{/* used for numbers or date */
+	font-weight:bold;
+	line-height:1.4em;
+	color: #996600;
+}
+
+#feature h3{
+	margin:0px;
+	padding:10px 0px 0px 0px;
+	font-size:1.3em;
+	font-weight:bold;
+	color: #663300;
+}
+
+#feature h4{
+	margin:0px;
+	padding:0px 0px 10px 0px;
+	font-size:1em;
+	font-weight:bold;
+	color: #996600;
+}
+
+/* genrelist found on index.php*/
+
+h3.genrecaption{
+	margin:0px;
+	padding:20px 30px;
+	text-align:left;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+h3.genrecaption strong{
+		color: #996600;
+}
+
+h3.genrecaption span{
+	color: #996600;
+	font-size:10px;
+}
+
+.listcontainer{
+	width:560px;
+	margin:15px 0px 15px 10px;
+	padding:0px;
+	background:transparent url(images/listcontainer.gif) top left repeat-y;
+}
+
+.list{
+	margin:0px;
+	padding:0px 0px 0px 0px;
+	width:255px;
+	float:left;
+}
+
+.list a{
+	display:block;
+	font-weight:bold;
+	font-size: 0.94em;
+	line-height:1.8em;
+	width:245px;
+}
+
+/* BULLETS */
+.bullets{
+	margin:10px 0px 10px 10px;
+	padding:0px;
+}
+
+.bullets li{
+	margin:0px 10px;
+	padding:0px 0px 0px 15px;
+	background:transparent url(../../images/bullets/bullet_green.gif) center left no-repeat;
+}
+
+/* main_gameinfo  styles*/
+
+#gameinfo h3 br{
+    clear:both;
+}
+
+#gameinfo h3 span,
+#gameinfo h3 img{
+  margin-left:4px;	
+  float:left; 
+}
+
+#gameinfo .btn_video{
+	margin: 10px 0 10px 95px;
+
+}
+
+/**
+ * Download button
+ */
+#gameinfo .btn_download{
+	margin:10px 0px 0px 10px;
+}
+/**
+ * Locale postion download button
+ */
+.page_da #gameinfo .btn_download{
+    margin:10px 0px 0px 60px;
+}
+
+.page_de #gameinfo .btn_download{
+    margin:10px 0px 0px 40px;
+}
+
+.page_en #gameinfo .btn_download{
+    margin:10px 0px 0px 47px;
+}
+
+.page_es #gameinfo .btn_download{
+    margin:10px 0px 0px 50px;
+}
+
+.page_fr #gameinfo .btn_download{
+    margin:10px 0px 0px 45px;
+}
+
+.page_it #gameinfo .btn_download{
+    margin:10px 0px 0px 60px;
+}
+
+/* jp should be ja... we will change this in the future */
+.page_jp #gameinfo .btn_download{
+    margin:10px 0px 0px 40px;
+}
+
+.page_nl #gameinfo .btn_download{
+    margin:10px 0px 0px 40px;
+}
+
+.page_pt #gameinfo .btn_download{
+    margin:10px 0px 0px 54px;
+}
+
+.page_sv #gameinfo .btn_download{
+    margin:10px 0px 0px 50px;
+}
+
+/**
+ * Cart button
+ */
+#gameinfo .btn_cart{
+	margin:10px 0px 0px 10px;
+}
+/**
+ * Locale postion cart button
+ */
+ 
+.page_da #gameinfo .btn_cart{
+    margin:10px 0px 0px 52px;
+}
+
+.page_de #gameinfo .btn_cart{
+    margin:10px 0px 0px 40px;
+}
+
+.page_en #gameinfo .btn_cart{
+    margin:10px 0px 0px 48px;
+}
+
+.page_es #gameinfo .btn_cart{
+    margin:10px 0px 0px 40px;
+}
+.page_fr #gameinfo .btn_cart{
+    margin:10px 0px 0px 26px;
+}
+
+.page_it #gameinfo .btn_cart{
+    margin:10px 0px 0px 52px;
+}
+
+.page_jp #gameinfo .btn_cart{
+    margin:10px 0px 0px 60px;
+}
+
+.page_pt #gameinfo .btn_cart{
+    margin:10px 0px 0px 54px;
+}
+
+.page_nl #gameinfo .btn_cart{
+    margin:10px 0px 0px 46px;
+}
+
+.page_sv #gameinfo .btn_cart{
+    margin:10px 0px 0px 56px;
+}
+/**
+ * Play button
+ */
+#gameinfo .btn_play{
+	margin: 10px 0px 0px 10px;
+}
+/**
+ * Locale postion play button
+ */
+.page_da #gameinfo .btn_play{
+    margin: 10px 0px 0px 50px;
+}
+
+
+.page_de #gameinfo .btn_play{
+    margin: 10px 0px 0px 40px;
+}
+
+.page_en #gameinfo .btn_play{
+    margin: 10px 0px 0px 48px;
+}
+
+.page_es #gameinfo .btn_play{
+    margin: 10px 0px 0px 48px;
+}
+
+.page_fr #gameinfo .btn_play{
+    margin: 10px 0px 0px 32px;
+}
+
+.page_it #gameinfo .btn_play{
+    margin: 10px 0px 0px 50px;
+}
+
+.page_jp #gameinfo .btn_play{
+    margin: 10px 0px 0px 36px;
+}
+
+.page_nl #gameinfo .btn_play{
+    margin: 10px 0px 0px 48px;
+}
+
+.page_pt #gameinfo .btn_play{
+    margin: 10px 0px 0px 38px;
+}
+
+.page_sv #gameinfo .btn_play{
+    margin: 10px 0px 0px 52px;
+}
+/* SORT LIST  browse.php */
+
+#sortlist label, #sortlist select{
+	float:left;
+	line-height:1em;
+	margin-top:6px;
+}
+
+#sortlist label{
+	margin-left:2px;
+	margin-right:2px;
+}
+
+#sort{
+	margin-left:2px;
+}
+
+#order{
+	margin-left:2px;
+}
+
+#genre{
+	margin-left:2px;
+	margin-right:2px;
+}
+
+/* box classes */
+
+.post{
+	padding: 3px 10px;
+	margin: 0px 15px 10px 5px;
+	clear:both;
+
+}
+
+.post-footer {
+	border-bottom: 1px dashed #c9e3be;
+	font-size: 95%;
+	background: #f7fee6;
+	padding: 3px 10px;
+	/* margin: 20px 0px 10px 15px; */
+	clear:both;
+}
+
+.post-footer .date {
+	background: url('images/clock.gif') no-repeat left center;
+	padding-left: 20px; margin: 0 10px 0 5px;
+}
+
+.post-footer .comments {
+	background: url('images/comment.gif') no-repeat left center;
+	padding-left: 20px; margin: 0 10px 0 5px;
+}
+
+.post-footer .readmore {
+
+	background: url('images/page.gif') no-repeat left center;
+	padding-left: 20px; margin: 0 10px 0 5px;
+}
+
+.paginate{
+	padding:10px 0px;
+	margin-left:15px;
+}
+
+.comment{
+	margin: 0px 25px 0px 25px;
+}
+
+/* Request view */
+iframe#requestframe{
+	margin:0px auto;
+	width:500px;
+	height:350px;
+}
+
+#requestBack{
+	margin:0px 0px 0px 235px;
+}
+
+/* MAIN */
+
+#main h4, #main form, #main .text, #main p, #main .post-footer{
+	margin-left:15px;
+}
+
+#main .text p, #CommentForm p{
+	margin-left:0px;
+}
+
+/* SIDE BAR */
+
+.sidebar{
+	margin:10px 0px 0px 0px;
+	padding:0px;
+	width:140px;
+}
+
+.sidebar h4{
+	padding:7px 7px 4px 7px;
+	width:126px;
+	border-bottom:1px solid #28a918;
+	line-height:16px;
+	font-size:1.2em;
+	background:#2fc107 url(images/h4_sidebar.gif) top left no-repeat;
+	text-align:left;
+	color:#fff;
+}
+
+.sidebar .text{
+	padding:5px 5px 0px 5px;
+	text-align:left;
+	font-size:1em;
+	font-weight:normal;
+	border:2px solid #28a918;
+	border-top:0px;
+	border-bottom:0px;
+}
+
+.sidebar .bottom{
+	padding:0px 0px 10px 0px;
+	width:140px;
+	background:transparent url(images/sidebar_bottom.gif) bottom left no-repeat;
+}
+
+/* ### LOGINMENU ### */
+#LoginForm{
+	margin:0px;
+	padding:0px;
+	border:none;
+	background-color:#ffffff;
+}
+#LoginForm .textbox{
+	width:110px;
+}
+
+.success{
+	margin:0px;
+	padding:5px 5px 5px 28px;
+	border:1px solid #009900;
+	background:#ddffdd url(../../images/icons/icon_check.gif) 5px 5px no-repeat;
+}
+.error{
+	margin:0px;
+	padding:5px 5px 5px 28px;
+	border:1px solid #fbf1a3;
+	background: #fdf8d2 url(../../images/icons/icon_error.gif) 5px 5px no-repeat;
+}
+
+.sgspopup{
+    padding:8px;
+    background-color:#ffffff;
+    border:1px solid #c9e3be;
+}   
+
+.sgspopup img{
+    border:1px solid #c9e3be;
+
+}
+
+.sgspopup span.close{
+    background-image: url("http://static.flowplayer.org/tools/img/overlay/close.png");
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+    border:none;
+}
+
+
+#Module_GamePlayButton{
+    height:350px;
+    margin:20px 0px 12px 0px;
+    color:#008800;
+    text-align:center;
+    background-position: 50% 50%; 
+    background-repeat:no-repeat; 
+}
+
+#Module_GamePlayButton > span{
+    margin-left:8px;
+    clear:both;
+   
+} 
+
+/** Module_GameContainer */
+
+#Module_GameContainerWrapper{
+    position:relative;
+    padding:0px 0px 14px 0px;
+    display:none;
+    clear:both;
+
+}
+
+#Module_GameContainer{
+    position:relative;
+    display:none;
+    padding:10px 10px 10px 10px;
+    text-align:center;
+    -moz-border-radius:12px;
+    -webkit-border-radius:12px;
+    -webkit-box-shadow:
+    rgba(0,0,0,0.5)
+    0px 0px 4px;
+    moz-box-shadow:
+    rgba(0,0,0,0.5)
+    0px 0px 4px; 
+ 
+ 
+}
+
+iframe#Module_GameContainerIframe{
+    position:absolute;
+    top:5px;
+    left:5px;
+    frameborder:0;
+    border:0;
+    margin:0px auto;
+    padding:0;
+    background:transparent;
+    background:#000000;
+}

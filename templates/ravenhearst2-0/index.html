@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<link rel="stylesheet" href="images/style.css" type="text/css" />
+<title>Ravenhearst Dark</title>
+<style>
+
+/* ###--------------------------------------------------------###
+ * style.css for wanda
+ * @author William Moffett <william.moffett@bigfishgames.com>
+ * @version 0.6
+ * @package PNP
+ */
+
+/* base elements */
+*{
+	margin:0px;
+	padding:0px;
+}
+
+body{
+	margin:0px;
+	padding:0px;
+	font: normal .70em/1.6em "Courier New", Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	color:#333333;
+	text-align:center;
+	background:#000000 url(images/background.jpg) top center no-repeat fixed;
+
+}
+
+
+a{ text-decoration:none; color:#0549c9;}
+a:hover{ text-decoration:underline; color:#008800;}
+
+h1,h2,h3,h4,h5{
+ 	font: normal 1.8em "Courier New", Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	color:#000000;
+}
+
+h1{ font-size: 1.8em;}
+h2{ font-size: 1.6em;}
+h3{ font-size: 1.4em;}
+h4{ font-size: 1.3em;}
+h5{ font-size: 1em;}
+
+p{}
+
+ul { margin: 0; padding : 0; list-style : none; }
+
+/* images */
+img{ border:none;}
+
+img.no-border {
+	border: none;
+}
+img.float-right {
+  margin: 5px 0px 5px 10px;
+}
+img.float-left {
+  margin: 5px 10px 5px 0px;
+}
+
+/* object code  - added by william */
+object{
+	padding: 5px;
+}
+object.no-border {
+	border: none;
+}
+object.float-right {
+  margin: 5px 0px 5px 15px;
+}
+object.float-left {
+  margin: 5px 15px 5px 0px;
+}
+
+/* form elements */
+form {
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #EFEFEF;
+	background: #F8F8F8;
+}
+
+label {
+	display:block;
+	font-weight:bold;
+	margin:5px;
+	padding: 2px;
+}
+
+input {
+	margin:0px 5px 0px 5px;
+	padding: 2px;
+	border:1px solid #c2d9e1;
+	font: normal 1em Verdana, 'Trebuchet MS', Tahoma, sans-serif;
+	color: #666666;
+	background: #ffffff url(images/textbox.gif) top left repeat-x;
+
+}
+
+input:hover {
+	border:1px solid #339ae6;
+	background: #ffffff url(images/textbox_hover.gif) top left repeat-x;
+}
+
+textarea {
+	width: 280px;
+	margin:0px 5px 5px 5px;
+	padding: 2px;
+	border:1px solid #c2d9e1;
+	font: normal 1em Verdana, 'Trebuchet MS', Tahoma, sans-serif;
+	height:100px;
+	display:block;
+	color: #666666;
+	background: #ffffff url(images/textbox.gif) top left repeat-x;
+}
+
+textarea:hover{
+	border:1px solid #339ae6;
+	background: #ffffff url(images/textbox_hover.gif) top left repeat-x;
+}
+
+/* helper classes */
+.clear { clear: both; }
+
+.clear-left{
+	clear:left;
+}
+
+.clear-right{
+	clear:right;
+}
+
+.clearfix{
+	display:block;
+	clear:both;
+	height:1px;
+}
+
+.float-left  { float: left; }
+.float-right { float: right; }
+.align-left  {	text-align: left; }
+.align-right {	text-align: right; }
+.align-center{ text-align:center; }
+
+.textbox{
+	font: normal 1em Verdana, sans-serif;
+	color:#777;
+}
+
+
+
+
+#page{
+	width: 758px;
+	margin: 0px auto;
+	background:#000000;
+	border:1px solid #151515;
+}
+
+#header{
+	margin:0px;
+	padding:0px;
+	position:relative;
+	width: 758px;
+	height: 132px;
+	background: #000000 url(images/header2.jpg) top left no-repeat;
+}
+
+/* header elements */
+
+#header h1, #header h2{
+	position:absolute;
+	top:0px;
+	margin:0px;
+	padding:0px;
+	color:#ffffff;
+}
+
+#header h1{
+	top:20px;
+	left:35px;
+	text-align:left;
+	font-size:30px;
+}
+
+#header h2 {
+	top:100px;
+	right:20px;
+	text-align:right;
+	color:#86b27e;
+}
+
+
+#utility{
+	position:absolute;
+	top:0px;
+	right:-1px;
+	display:inline;
+	margin:0px;
+	padding:0px 0px 0px 40px;
+	height:25px;
+	background: transparent url(images/utility.gif) top left no-repeat;
+	z-index:100;
+}
+
+#utility h4{
+	display:none;
+}
+
+#utility p{
+	margin:0px;
+	padding:0px 20px 0px 10px;
+	height:25px;
+	float:left;
+	line-height:25px;
+	background-color:#000000;
+}
+
+#content{
+	margin: 0px auto;
+	padding:0px;
+	width: 758px;
+}
+
+
+#main{
+	width:554px;
+	float:left;
+	text-align:left;
+}
+
+
+#main .block{
+	margin:0px 0px 0px 15px;
+	width:526px;
+	background: #fef2dd url(images/block.jpg) top left no-repeat;
+	border:2px solid #b5a186;
+	border-left:none;
+	border-top:none;
+}
+
+#main .block h3{
+	margin: 0px 3px;
+	padding:11px 15px;
+	border-bottom:1px dotted #d0bb9b;
+}
+
+#main .block .text{
+	margin: 0px;
+	padding:5px 15px;
+}
+
+/* ### SIDE BAR STYLES ### */
+
+#sidebar{
+	width:193px;
+	float:right;
+	text-align:left;
+}
+
+
+#sidebar .block{
+	width:177px;
+	margin:0px;
+	padding:0px;
+	background:#fef2dd url(images/sb_center.jpg) top left repeat-y;
+}
+
+#sidebar .block h4{
+	margin: 0px 3px;
+	padding:0px;
+	border-bottom:1px dotted #d0bb9b;
+}
+
+#sidebar .block .text{
+	margin: 0px;
+	padding:5px 10px;
+}
+.block_bottom{
+	width:177px;
+	margin:0px;
+	padding:0px 0px 15px 0px;
+ 	background:transparent url(images/sb_bottom.jpg) bottom left no-repeat;
+}
+
+.block_top{
+	width:177px;
+	margin:0px;
+	padding:25px 0px 0px 0px;
+	background:transparent url(images/sb_top.jpg) top left no-repeat;
+}
+
+
+#footer{
+	margin: 14px auto 0px auto;
+	padding:0px;
+	width: 758px;
+	border:1px solid #151515;
+}
+
+#disclaimer{
+	background-color:#202020;
+}
+
+
+.clearme{
+	clear:both;
+}
+
+</style>
+</head>
+<body>
+			<!-- start page -->
+			<div id="page">
+				<!-- start header -->
+				<div id="header">
+					<h1>
+					{SITENAME}
+					</h1>
+					<h2>
+					{SITETAG}
+					</h2>
+					<div id="utility">
+						<h4>Search</h4>
+						<p>ptag wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww</p>
+
+					</div>
+
+				</div>
+				<!-- end header -->
+
+				<!-- start content -->
+				<div id="content">
+
+					<!-- main -->
+					<div id="main">
+						{MAIN}
+						<!-- main block -->
+						<div class="block">
+							<h3> Featured Game</h3>
+							<div class="text">
+							some text goes here
+							</div>
+						</div>
+					<!-- end main block -->
+
+					</div>
+					<!-- end main -->
+					<!-- sidebar -->
+					<div id="sidebar">
+
+
+						<div class="block">
+							<div class="block_bottom">
+								<div class="block_top">
+									<h4> Featured Game</h4>
+									<div class="text">
+									some text goes here
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end module -->
+
+
+
+					</div>
+					<!-- end sidebar -->
+				</div>
+				<!-- end content -->
+			<div class="clearme"><!-- clear  fix -->
+			</div>
+r
+			</div>
+			<!-- end page -->
+
+			<!-- start footer -->
+			<div id="footer">
+				<p>
+				some footer copy
+				</p>
+
+				<div id="disclaimer">
+					disclaimerf wrwew
+				</div>
+			</div>
+			<!-- end footer -->
+</body>
+</html>
+
